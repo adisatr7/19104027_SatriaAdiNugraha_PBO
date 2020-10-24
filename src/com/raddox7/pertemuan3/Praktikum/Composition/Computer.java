@@ -8,7 +8,7 @@ package com.raddox7.pertemuan3.Praktikum.Composition;
 
 public class Computer {
 
-    // Attributes
+    // Components
     private String type;
     private Keyboard keyboard;
     private Mouse mouse;
