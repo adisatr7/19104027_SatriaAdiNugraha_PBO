@@ -6,13 +6,16 @@
 
 package com.raddox7.pertemuan3.Tugas.No1;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Komplek {
 
     // Define attributes
     private String idKomplek;
     private String namaKomplek;
     private int jmlRumah = 0;
-    private String[] idRumah = new String[30];
+    private List<String> idRumah = new ArrayList<>();
 
     // Constructor
     public Komplek(String idKomplek, String namaKomplek) {
@@ -22,16 +25,8 @@ public class Komplek {
 
     // Adds a house to this complex
     public void addRumah(String idRumah) {
-        this.idRumah[jmlRumah] = idRumah;
+        this.idRumah.add(jmlRumah, idRumah);
         jmlRumah++;
-    }
-
-    // Prints out all data
-    public void getDataKomplek() {
-        System.out.println("Komplek Perumahan " + getNamaKomplek() + " " + getIdKomplek());
-        System.out.println("Daftar Rumah:");
-        for (int i = 0; i < jmlRumah; i++)
-            System.out.println((i + 1) + ") " + idRumah[i]);
     }
 
     // Returns the neighborhood ID
@@ -65,12 +60,20 @@ public class Komplek {
     }
 
     // Returns the house array
-    public String[] getIdRumah() {
-        return idRumah;
+    public void getIdRumah() {
+        for (String index : idRumah)
+            System.out.println("- " + index);
     }
 
     // Sets the house array
-    public void setIdRumah(String[] idRumah) {
+    public void setIdRumah(List<String> idRumah) {
         this.idRumah = idRumah;
+    }
+
+    // Prints out all data
+    public void getDataKomplek() {
+        System.out.println("Komplek Perumahan " + getNamaKomplek() + " " + getIdKomplek());
+        System.out.println("Daftar Rumah:");
+        getIdRumah();
     }
 }
