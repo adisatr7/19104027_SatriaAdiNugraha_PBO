@@ -1,0 +1,7 @@
+{
+  "name": "PraktikumPBO",
+  "version": "1.0.0",
+  "dependencies": {
+    "prompt-sync": "latest"
+  }
+}
